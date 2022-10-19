@@ -4,6 +4,8 @@
 
 No App você pode pesquisar um tema ou subreddit especifico, e para que isso aconteça pode ser feito uma pesquisa pelo campo de busca ou também pode ser feito uma pesquisa por leitura de um determinado QRCode.
 
+<img src=".\screenshots\1.jpg"  height="450" width="250"/> <img src=".\screenshots\2.jpg"  height="450" width="250"/><img src=".\screenshots\3.jpg"  height="450" width="250"/>
+
 Pacotes utilizados na aplicação.
 - **provider** -> Utilizado para gerencia de estado.
 - **http** -> Utilizado para fazer solicitações HTTPS.
