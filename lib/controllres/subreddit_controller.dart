@@ -5,7 +5,7 @@ import 'package:technology_feed/repository/search_subreddit_repository.dart';
 
 class SubredditController extends ChangeNotifier {
   SearchSubredditRepository subredditRepository = SearchSubredditRepository();
-  ResponseModel? data = ResponseModel();
+  PostsModel? data = PostsModel();
   DetailsModel? details;
   TextEditingController controllerSearchSubreddit =
       TextEditingController(text: 'FlutterDev');

@@ -5,7 +5,7 @@ import 'package:technology_feed/model/details_model.dart';
 import 'package:technology_feed/model/subreddit_model.dart';
 
 class SearchSubredditRepository {
-  Future<ResponseModel?> searchSubreddit(String subreddit) async {
+  Future<PostsModel?> searchSubreddit(String subreddit) async {
     try {
       final response = await http.get(
         Uri.parse('https://www.reddit.com/r/$subreddit.json'),
@@ -13,7 +13,7 @@ class SearchSubredditRepository {
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        ResponseModel posts = ResponseModel.fromJson(data);
+        PostsModel posts = PostsModel.fromJson(data);
         return posts;
       }
     } catch (error) {
