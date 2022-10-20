@@ -57,12 +57,12 @@ class _FeedViewState extends State<FeedView> {
                   return ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: controller.data!.data!.children!.length,
+                    itemCount: controller.data!.posts!.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          subredditController.urlDetails = controller
-                              .data!.data!.children![index].data!.permalink!;
+                          subredditController.urlDetails =
+                              controller.data!.posts![index].permalink!;
                           subredditController.getDetails();
                           Navigator.pushNamed(
                             context,
@@ -77,25 +77,17 @@ class _FeedViewState extends State<FeedView> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                    'u/${controller.data!.data!.children![index].data!.author!}'),
+                                    'u/${controller.data!.posts![index].author!}'),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Flexible(
-                                      child: Text(controller.data!.data!
-                                          .children![index].data!.title!),
+                                      child: Text(controller
+                                          .data!.posts![index].title!),
                                     ),
-                                    controller.data!.data!.children![index]
-                                                    .data!.thumbnail! !=
-                                                'self' &&
-                                            controller
-                                                    .data!
-                                                    .data!
-                                                    .children![index]
-                                                    .data!
-                                                    .thumbnail! !=
-                                                'default'
+                                    controller.data!.posts![index].thumbnail!
+                                            .contains('http')
                                         ? Container(
                                             height: 50,
                                             width: 80,
@@ -103,9 +95,7 @@ class _FeedViewState extends State<FeedView> {
                                               image: DecorationImage(
                                                 image: NetworkImage(controller
                                                     .data!
-                                                    .data!
-                                                    .children![index]
-                                                    .data!
+                                                    .posts![index]
                                                     .thumbnail!),
                                               ),
                                             ),
@@ -116,13 +106,13 @@ class _FeedViewState extends State<FeedView> {
                                 Row(
                                   children: [
                                     Text(
-                                      '${controller.data!.data!.children![index].data!.score} Upvotes',
+                                      '${controller.data!.posts![index].score} Upvotes',
                                     ),
                                     const SizedBox(
                                       width: 12,
                                     ),
                                     Text(
-                                        '${controller.data!.data!.children![index].data!.numComments} Comentários')
+                                        '${controller.data!.posts![index].numComments} Comentários')
                                   ],
                                 )
                               ],
