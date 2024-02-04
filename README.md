@@ -1,6 +1,6 @@
 # technology_feed
 
- O Projeto tem como objetico consumir a Api publica do Reddit para mostrar uma versão simplificada dos posts mais recentes de um determinado subreddit pesquisado pelo usuário.
+Projeto de teste de habilidade para uma empresa. Ele tem como objetivo consumir Api publica do Reddit para mostrar uma versão simplificada dos posts mais recentes de um determinado subreddit pesquisado.
 
 No App você pode pesquisar um tema ou subreddit especifico, e para que isso aconteça pode ser feito uma pesquisa pelo campo de busca ou também pode ser feito uma pesquisa por leitura de um determinado QRCode.
 
